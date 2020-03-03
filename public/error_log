@@ -1,0 +1,25 @@
+[01-Oct-2018 20:03:44 Etc/GMT] PHP Fatal error:  Uncaught ReflectionException: Class App\Http\Kernel does not exist in /home/uray2202/public_html/TMSNEW/vendor/laravel/framework/src/Illuminate/Container/Container.php:729
+Stack trace:
+#0 /home/uray2202/public_html/TMSNEW/vendor/laravel/framework/src/Illuminate/Container/Container.php(729): ReflectionClass->__construct('App\\Http\\Kernel')
+#1 /home/uray2202/public_html/TMSNEW/vendor/laravel/framework/src/Illuminate/Container/Container.php(608): Illuminate\Container\Container->build('App\\Http\\Kernel')
+#2 /home/uray2202/public_html/TMSNEW/vendor/laravel/framework/src/Illuminate/Container/Container.php(564): Illuminate\Container\Container->resolve('App\\Http\\Kernel', Array)
+#3 /home/uray2202/public_html/TMSNEW/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(709): Illuminate\Container\Container->makeWith('App\\Http\\Kernel', Array)
+#4 /home/uray2202/public_html/TMSNEW/vendor/laravel/framework/src/Illuminate/Container/Container.php(248): Illuminate\Foundation\Application->makeWith('App\\Http\ in /home/uray2202/public_html/TMSNEW/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 729
+[05-Dec-2018 10:33:57 Etc/GMT] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Dec-2018 10:33:57 Etc/GMT] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Dec-2018 10:33:57 Etc/GMT] PHP Fatal error:  Unknown: Failed opening required '/home/uray2202/public_html/TMSNEW/public/index.php' (include_path='.:/opt/alt/php71/usr/share/pear') in Unknown on line 0
+[05-Dec-2018 10:34:03 Etc/GMT] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Dec-2018 10:34:03 Etc/GMT] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Dec-2018 10:34:03 Etc/GMT] PHP Fatal error:  Unknown: Failed opening required '/home/uray2202/public_html/TMSNEW/public/index.php' (include_path='.:/opt/alt/php71/usr/share/pear') in Unknown on line 0
+[05-Dec-2018 10:34:16 Etc/GMT] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Dec-2018 10:34:16 Etc/GMT] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Dec-2018 10:34:16 Etc/GMT] PHP Fatal error:  Unknown: Failed opening required '/home/uray2202/public_html/TMSNEW/public/index.php' (include_path='.:/opt/alt/php71/usr/share/pear') in Unknown on line 0
+[05-Dec-2018 10:34:24 Etc/GMT] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Dec-2018 10:34:24 Etc/GMT] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Dec-2018 10:34:24 Etc/GMT] PHP Fatal error:  Unknown: Failed opening required '/home/uray2202/public_html/TMSNEW/public/index.php' (include_path='.:/opt/alt/php71/usr/share/pear') in Unknown on line 0
+[05-Dec-2018 10:35:45 Etc/GMT] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Dec-2018 10:35:45 Etc/GMT] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Dec-2018 10:35:45 Etc/GMT] PHP Fatal error:  Unknown: Failed opening required '/home/uray2202/public_html/TMSNEW/public/index.php' (include_path='.:/opt/alt/php71/usr/share/pear') in Unknown on line 0
+[05-Dec-2018 10:36:01 Etc/GMT] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Dec-2018 10:36:01 Etc/GMT] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[05-Dec-2018 10:36:01 Etc/GMT] PHP Fatal error:  Unknown: Failed opening required '/home/uray2202/public_html/TMSNEW/public/index.php' (include_path='.:/opt/alt/php71/usr/share/pear') in Unknown on line 0

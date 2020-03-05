@@ -30,12 +30,18 @@ class TimesheetController extends Controller {
         $request->session()->forget('holidaydata');
         $request->session()->forget('infodata');
         $request->session()->forget('diseasedata');
-        $value = $request->session()->get('timedata');
-        if ($value[0]['name'] != '') {$name = $value[0]['name']; }else{ $name = ''; }
-        if ($value[0]['workplaces'] != '') {$workplaces = $value[0]['workplaces']; }else{ $workplaces = ''; }
-        if ($value[0]['month'] != '') {$month = $value[0]['month']; }else{ $month = date('m'); }
-        if ($value[0]['year'] != '') {$year = $value[0]['year']; }else{ $year = date('Y'); }
-
+        if ($request->session()->has('timedata')){
+            $value = $request->session()->get('timedata');
+            if ($value[0]['name'] != '') {$name = $value[0]['name']; }else{ $name = ''; }
+            if ($value[0]['workplaces'] != '') {$workplaces = $value[0]['workplaces']; }else{ $workplaces = ''; }
+            if ($value[0]['month'] != '') {$month = $value[0]['month']; }else{ $month = date('m'); }
+            if ($value[0]['year'] != '') {$year = $value[0]['year']; }else{ $year = date('Y'); }
+        }else{
+            $name = '';
+            $workplaces = '';
+            $month = date('m');
+            $year = date('Y');
+        }
         $data['serchbardetails'] = [$name, $workplaces, $month, $year];
         
         $data['detail'] = $this->loginUser;

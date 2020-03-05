@@ -23,12 +23,12 @@ var NewCustomer = function () {
         };
         getDataTable(arrList);
 
-        $('.delete').click(function () {
+        $('body').on("click", ".delete", function () {
             var dataid = $(this).attr('data-id');
             $('.yes-sure').attr('data-id', dataid);
         });
 
-        $('.yes-sure').click(function () {
+        $('body').on("click", ".yes-sure", function () {
             var id = $(this).attr('data-id');
             $.ajax({
                 type: "POST",

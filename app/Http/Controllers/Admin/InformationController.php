@@ -31,12 +31,18 @@ class InformationController extends Controller {
         $request->session()->forget('holidaydata');
         $request->session()->forget('timedata');
         $request->session()->forget('diseasedata');
-        $value = $request->session()->get('infodata');
-        if ($value[0]['name'] != '') {$name = $value[0]['name']; }else{ $name = ''; }
-        if ($value[0]['workplaces'] != '') {$workplaces = $value[0]['workplaces']; }else{ $workplaces = ''; }
-        if ($value[0]['month'] != '') {$month = $value[0]['month']; }else{ $month = date('m'); }
-        if ($value[0]['year'] != '') {$year = $value[0]['year']; }else{ $year = date('Y'); }
-
+        if($request->session()->has('infodata')){
+            $value = $request->session()->get('infodata');
+            if ($value[0]['name'] != '') {$name = $value[0]['name']; }else{ $name = ''; }
+            if ($value[0]['workplaces'] != '') {$workplaces = $value[0]['workplaces']; }else{ $workplaces = ''; }
+            if ($value[0]['month'] != '') {$month = $value[0]['month']; }else{ $month = date('m'); }
+            if ($value[0]['year'] != '') {$year = $value[0]['year']; }else{ $year = date('Y'); }
+        }else{
+            $name = '';
+            $workplaces = '';
+            $month = date('m');
+            $year = date('Y');
+        }
         $data['serchbardetails'] = [$name, $workplaces, $month, $year];
 
         $objUser = new Users();

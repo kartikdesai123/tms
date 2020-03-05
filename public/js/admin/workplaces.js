@@ -64,14 +64,14 @@ var Workplaces = function () {
 
 
 
-        $('.delete').click(function () {
+        $('body').on("click", ".delete", function () {
             var dataid = $(this).attr('data-id');
             var dataurl = $(this).attr('data-url');
             $('.yes-sure').attr('data-id', dataid);
             $('.yes-sure').attr('data-url', dataurl);
 
 
-            $('.yes-sure').click(function () {
+            $('body').on("click", ".yes-sure", function () {
                 var id = $(this).attr('data-id');
                 $.ajax({
                     type: "POST",

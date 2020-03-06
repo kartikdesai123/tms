@@ -180,4 +180,7 @@ return [
     'dash_total_day'=>'Tage insgesamt',
     'dash_taken'=>'Genommen',
     'dash_remained'=>'Geblieben',
+    'Active_Users' => 'Aktive Benutzer',
+    'Users_In_Active_soon' => 'Benutzer sind bald inaktiv',
+    'In_Active_Users' => 'Inaktive Benutzer',
 ];

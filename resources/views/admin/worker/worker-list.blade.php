@@ -98,9 +98,9 @@
             <div class="row">
                 <div class="col-md-7"></div>
                 <div class="col-md-5">
-                    <i class="fa fa-circle" style="color:#34aa44;"></i>&nbsp;&nbsp;Active Users&nbsp;&nbsp;
-                    <i class="fa fa-circle" style="color:#fd9a18;"></i>&nbsp;&nbsp;Users In-Active soon&nbsp;&nbsp;
-                    <i class="fa fa-circle" style="color:#ed1c24;"></i>&nbsp;&nbsp;In-Active Users&nbsp;&nbsp;
+                    <i class="fa fa-circle" style="color:#34aa44;"></i>&nbsp;&nbsp;{{ trans('words.Active_Users') }}&nbsp;&nbsp;
+                    <i class="fa fa-circle" style="color:#fd9a18;"></i>&nbsp;&nbsp;{{ trans('words.Users_In_Active_soon') }}&nbsp;&nbsp;
+                    <i class="fa fa-circle" style="color:#ed1c24;"></i>&nbsp;&nbsp;{{ trans('words.In_Active_Users') }}&nbsp;&nbsp;
                 </div>
             </div>
         </div>

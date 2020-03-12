@@ -687,8 +687,8 @@ $count = 1;
                         <tr class="c-table__row">
                             <th class="c-table__cell c-table__cell--head" style="margin-left: 5px;">ID</th>
                             <th class="c-table__cell c-table__cell--head">Date&nbsp;&nbsp;</th>
-                            <th class="c-table__cell c-table__cell--head">Staffnumber&nbsp;&nbsp;</th>
                             <th class="c-table__cell c-table__cell--head">Worker&nbsp;&nbsp;</th>
+                            <th class="c-table__cell c-table__cell--head">Staffnumber&nbsp;&nbsp;</th>
                             <th class="c-table__cell c-table__cell--head">Workplace</th>
                             <th class="c-table__cell c-table__cell--head">Missing Time</th>
                             <th class="c-table__cell c-table__cell--head no-sort">Supervisior Reason</th>

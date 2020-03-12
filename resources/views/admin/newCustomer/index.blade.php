@@ -140,7 +140,7 @@
 </div><!-- // .container -->
 <style>
     .c-table-responsive .c-table {
-        display: inline-table !important;
+        display: table !important;
         overflow-y: hidden;
     }
     .c-table__title .c-tooltip{

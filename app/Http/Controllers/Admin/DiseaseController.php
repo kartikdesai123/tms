@@ -35,11 +35,16 @@ class DiseaseController extends Controller {
         $request->session()->forget('holidaydata');
         $request->session()->forget('timedata');
         $request->session()->forget('infodata');
-        $value = $request->session()->get('diseasedata');
-        if ($value[0]['name'] != '') {$name = $value[0]['name']; }else{ $name = ''; }
-        if ($value[0]['month'] != '') {$month = $value[0]['month']; }else{ $month = date('m'); }
-        if ($value[0]['year'] != '') {$year = $value[0]['year']; }else{ $year = date('Y'); }
-
+        if($request->session()->has('diseasedata')){
+            $value = $request->session()->get('diseasedata');
+            if ($value[0]['name'] != '') {$name = $value[0]['name']; }else{ $name = ''; }
+            if ($value[0]['month'] != '') {$month = $value[0]['month']; }else{ $month = date('m'); }
+            if ($value[0]['year'] != '') {$year = $value[0]['year']; }else{ $year = date('Y'); }
+        }else{
+            $name = '';
+            $month = date('m');
+            $year = date('Y');
+        }
         $data['serchbardetails'] = [$name, $month, $year];
         $objUser = new Users();
         $userList = $objUser->gtUsrLlist();

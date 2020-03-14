@@ -130,8 +130,8 @@
                 <div class="col-md-6 pull-right"></div>
                 <div class="col-md-6">
                     <i class="fa fa-circle" style="color:#34aa44;"></i>&nbsp;&nbsp;Already Customer&nbsp;&nbsp;
-                    <i class="fa fa-circle" style="color:#fd9a18;"></i>&nbsp;&nbsp;Retired Customer&nbsp;&nbsp;
-                    <i class="fa fa-circle" style="color:#ed1c24;"></i>&nbsp;&nbsp;Prospective Customer&nbsp;&nbsp;
+                    <i class="fa fa-circle" style="color:#fd9a18;"></i>&nbsp;&nbsp;Prospective Customer&nbsp;&nbsp;
+                    <i class="fa fa-circle" style="color:#ed1c24;"></i>&nbsp;&nbsp;Retired Customer&nbsp;&nbsp;
                 </div>
             </div>
         </div>
@@ -140,7 +140,7 @@
 </div><!-- // .container -->
 <style>
     .c-table-responsive .c-table {
-        display: inline-table !important;
+        display: table !important;
         overflow-y: hidden;
     }
     .c-table__title .c-tooltip{

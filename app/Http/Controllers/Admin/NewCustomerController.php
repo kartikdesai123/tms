@@ -27,7 +27,7 @@ class NewCustomerController extends Controller {
 
         $objcustomer = new Newcustomer();
         $customerList = $objcustomer->getCustomerNew();
-        
+
         $data['detail'] = $this->loginUser;
         $data['css'] = array();
         $data['js'] = array('admin/newCustomer.js');
@@ -38,25 +38,16 @@ class NewCustomerController extends Controller {
         $request->session()->forget('timedata');
         $request->session()->forget('infodata');
         $request->session()->forget('diseasedata');
-        $value = $request->session()->get('customerdata');
-//        print_r($value);die();
-        if ($value[0]['name'] != '') {
-            $name = $value[0]['name'];
-        } else {
+        if($request->session()->has('customerdata')){
+            $value = $request->session()->get('customerdata');
+            if ($value[0]['name'] != '') { $name = $value[0]['name']; } else { $name = ''; }
+            if ($value[0]['status'] != '') { $status = $value[0]['status']; } else { $status = ''; }
+            if ($value[0]['type'] != '') { $type = $value[0]['type']; } else { $type = ''; }
+        }else{
             $name = '';
-        }
-        if ($value[0]['status'] != '') {
-            $status = $value[0]['status'];
-        } else {
             $status = '';
-        }
-        if ($value[0]['type'] != '') {
-            $type = $value[0]['type'];
-        } else {
             $type = '';
         }
-        
-//        print_r($name);print_r($status);print_r($type);
         $data['serchbardetails'] = [$name, $status, $type];
 
         return view('admin.newCustomer.index', $data);
@@ -73,7 +64,7 @@ class NewCustomerController extends Controller {
         Session::push('customerdata', $customerdata);
 //        $value = $request->session()->get('customerdata');
 //        print_r($value);die();
-        $data['serchbardetails'] = [$request->input('name'),  $request->input('type'), $request->input('status'),];
+        $data['serchbardetails'] = [$request->input('name'), $request->input('type'), $request->input('status'),];
 //        print_r($data['serchbardetails']);die();
         $objcustomer = new Newcustomer();
         $customerList = $objcustomer->getCustomerNew();

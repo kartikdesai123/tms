@@ -176,4 +176,7 @@ return [
     'dash_total_day'=>'Total days',
     'dash_taken'=>'Taken',
     'dash_remained'=>'Remained',
+    'Active_Users' => 'Active User',
+    'Users_In_Active_soon' => 'User In-Active soon',
+    'In_Active_Users' => 'User In-Active soon',
 ];

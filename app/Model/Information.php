@@ -622,8 +622,8 @@ class Information extends Model {
 
         $query = Timesheet::from('timesheet')
                 ->leftjoin('users as u1', 'timesheet.worker_id', '=', 'u1.id')
-                ->leftjoin('users as u2', 'timesheet.supervisior_id', '=', 'u2.id')
-                ->where('timesheet.supervisior_reson', '!=', "");
+                ->leftjoin('users as u2', 'timesheet.supervisior_id', '=', 'u2.id');
+//                ->where('timesheet.supervisior_reson', '!=', "");
 
         
         if ($workerplace != "" || $workerplace != "All") {

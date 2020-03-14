@@ -117,7 +117,7 @@ button{
     transition: 0.3s;
 }
 .c-table-responsive .c-table {
-    display: inline-table !important;
+    display: table !important;
     overflow-y: hidden;
 }
 </style>

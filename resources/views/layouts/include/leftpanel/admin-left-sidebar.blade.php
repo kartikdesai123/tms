@@ -75,7 +75,6 @@ $currentRoute = Route::current()->getName();
                         @endif
                     </a>
                 </div>  -->
-                <div class="language-selection {{ (isset($_COOKIE['language']) && ($_COOKIE['language']) ==  'en' ? 'active' : (!isset($_COOKIE['language']))?'active':'')  }} " style="display: inline;">
                     <a href="javascript:;" class="language" data-lang="en" style="padding-left: 10px;">
                        @if(($_COOKIE['language']) ==  'en')
                         <img class="" src="{{ asset('img/flag/english.png') }}" alt="English-Logo"  style='height : 22px;'>
@@ -83,7 +82,7 @@ $currentRoute = Route::current()->getName();
                         <img class="" src="{{ asset('img/flag/english-notactive.png') }}" alt="English-Logo"  style='height : 22px;'>
                         @endif
                     </a>
-                </div>
+                <!--</div>-->
             </li>
         </ul>
     </div>

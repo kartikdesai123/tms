@@ -63,11 +63,13 @@ class Users extends Model {
             $result = Users::select('users.*')
                         ->where('id', '=', $id)
                         ->where('isBlocked', '=','unblocked')
+                        ->orderBy('name','ASC')
                         ->get();
         }else{
             $result = Users::select('*')
                     ->where('type','!=','ADMIN')
                     ->where('isBlocked',  '=','unblocked')
+                    ->orderBy('name','ASC')
                     ->get();
         }
         return $result;
@@ -75,7 +77,8 @@ class Users extends Model {
 
     public function gtBeststafflist($id = NULL) {
         if($id){
-            $result = Users::get();
+            $result = Users::orderBy('name', 'ASC')
+                    ->get();
         }else{
             $result = worker::select('users.id','users.staffnumber','users.name','users.surname',
                             DB::raw('SUM(total_time) as total_houres')
@@ -233,8 +236,6 @@ class Users extends Model {
             
         }else{
             $result = Users::get();
-
-           // dd($result);
         }
         
         return $result[0]->name.' '.$result[0]->surname;
@@ -243,12 +244,73 @@ class Users extends Model {
 	public function newgetDashboradStaff() {
       //  $result = Users::where('type', '!=', 'ADMIN')->pluck('name', 'id')->toArray();
 	  
-	  $result = Users::select('users.name','users.surname', 'users.id')
-                        ->where('users.type', '!=', 'ADMIN')
-                        ->where('users.isBlocked',  '=','unblocked')
-                        ->orderBy('users.name', 'asc')
-                        ->get();
-        
+            $result = Users::select('users.name','users.surname', 'users.id',"workerdetails.endContract")
+                                ->leftjoin("workerdetails","workerdetails.workerId","=","users.id")
+                                ->where('users.type', '!=', 'ADMIN')
+                                ->where('users.isBlocked',  '=','unblocked')
+                                ->orderBy('users.name', 'asc')
+                                ->get();
+            $i = 0;
+            foreach($result as $key => $value){
+                $res = '';
+                $objUser = new Users();
+                $res = $objUser->activeinactiveuser($value->endContract);
+                $result[$i]->status = $res;
+                $i++;
+            }
+            
+        return $result;
+    }
+    public function activeinactiveuser($date){
+            $endcontratDate = date('Y-m-d',strtotime($date));
+            $alertData = date('Y-m-d', strtotime('-56 days', strtotime($date)));
+            $currentDate = date("Y-m-d");
+
+            if($currentDate < $endcontratDate){
+                    if($currentDate > $alertData){
+                        
+                        $status =  'verysoon';
+                    }
+                    else{
+                        $status =  'active';
+                    }
+            }else{
+                $status =  'inactive';
+            }
+            return $status;
+    }
+
+    public function newgetDashboradStaffshorting($id) {
+           
+      //  $result = Users::where('type', '!=', 'ADMIN')->pluck('name', 'id')->toArray();
+          if($id != "all"){
+              $result = Users::select('users.name','users.surname', 'users.id',"workerdetails.endContract")
+                            ->join("workerdetails","workerdetails.workerId","=","users.id")
+                            ->where('users.type', '!=', 'ADMIN')
+                            ->where('users.id',$id)
+                            ->where('users.isBlocked',  '=','unblocked')
+                            ->orderBy('users.name', 'asc')
+                            ->get();
+          }else{
+              $result = Users::select('users.name','users.surname', 'users.id',"workerdetails.endContract")
+                            ->join("workerdetails","workerdetails.workerId","=","users.id")
+                            ->where('users.type', '!=', 'ADMIN')
+                            ->where('users.isBlocked',  '=','unblocked')
+                            ->orderBy('users.name', 'asc')
+                            ->get();
+          }
+	  
+        return $result;
+    }
+    
+	public function newgetDashboradStaffshortingbystatus($status) {
+           $result = Users::select('users.name','users.surname', 'users.id',"workerdetails.endContract")
+                              ->join("workerdetails","workerdetails.workerId","=","users.id")
+                              ->where('users.type', '!=', 'ADMIN')
+                              ->where('users.isBlocked',  '=','unblocked')
+                              ->orderBy('users.name', 'asc')
+                              ->get();
+	  
         return $result;
     }
 	
